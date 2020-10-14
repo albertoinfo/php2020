@@ -28,11 +28,12 @@
 
 define('CANTIDAD', 50);
 define('VALORMAX',100);
+
 $numero=random_int(1,VALORMAX);
 // Máximo y mínimo provisionales
 $minimo=$numero;
 $maximo=$numero;
-$suma=0;
+$suma=$numero;
 
 for($i=1; $i<CANTIDAD; $i++){
     $numero=random_int(1,VALORMAX);
