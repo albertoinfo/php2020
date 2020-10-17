@@ -47,9 +47,10 @@
 <body>
   
   <?php  
+    define ('TAMAÑO',20);
     $numeros = [];
-    $max_num = 20;
-    for ($i = 0; $i < $max_num; $i++) {
+   
+    for ($i = 0; $i < TAMAÑO; $i++) {
         $numeros[] = rand (1,10);
     }
     //Muestro la tabla
@@ -58,7 +59,7 @@
         echo "<td style='border: 1px solid black; padding: 5px';>",$numeros[$i]."</td>";
     }
     echo "</tr></table>";
-    $maximo = valorMaximo($numeros);
+    $maximo = max($numeros);
     $minimo = valorMinimo($numeros);
     $repetido = valorRepetido($numeros);
     echo "<br> Máximo = $maximo <br> Mínimo = $minimo <br> Moda = $repetido "  

@@ -30,8 +30,8 @@ $deportes = array(
 		</tr><?php 
 		foreach($deportes as $c => $v){?>
 		<tr>
-			<td><?php echo $c ?></td>
-			<td> <img src="<?php echo $v ?>" alt="<?php echo $c ?>"></td>
+			<td><?= $c ?></td>
+			<td> <img src="<?= $v ?>" alt="<?= $c ?>"></td>
 		</tr>
 <?php }?>
 	</table>
