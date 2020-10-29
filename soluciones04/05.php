@@ -19,10 +19,10 @@
 			<form method="post" name="datos" size=15>
 				Nombre: &nbsp; <input name="nombre"><br> Apellidos: <input
 					name="apellidos" size=30> <br> Edad: <select name="edad">
-					<option>Menor de 18</option>
-					<option>Entre 18 a 30</option>
-					<option>Entre 30 a 55</option>
-					<option>Mayor de 55</option>
+					<option value='1'>Menor de 18</option>
+					<option value='2'>Entre 18 a 30</option>
+					<option value='3'>Entre 30 a 55</option>
+					<option value='4'>Mayor de 55</option>
 					</select> 
 					<br> Sexo: 
 					<input name="sexo"  value="hombre" type=radio  checked="checked">Hombre &nbsp;
@@ -39,6 +39,8 @@
 		     $nombre = limpiarEntrada($_POST["nombre"]);
 		     $apellidos = limpiarEntrada($_POST["apellidos"]); 
 		     $msg = ($_POST['sexo'] == "hombre" )?"Bienvenido":"Bienvenida";
+		     $edad = $_POST['edad'];
+		     $msg .= añadirpre();
 		     $msg .= " $nombre $apellidos ";
 		     if ( !isset ($_POST["hobbies"])){
 		         $msg .= "no tiene aficiones de nuestra lista.";
@@ -67,22 +69,30 @@
 		?>
 		</div>
 	</div>
-<hr>
+<hr>$edad = $_POST['edad'];
 <?php 
 // Función para limpiar un valor
-function limpiarEntrada($entrada){
+function limpiarEntrada(string $entrada):string{
     $salida = trim($entrada); // Elimina espacios antes y después de los datos
     $salida = stripslashes($salida); // Elimina backslashes \
     $salida = htmlspecialchars($salida); // Traduce caracteres especiales en entidades HTML
     return $salida;
 }
 // Función para limpiar todos elementos de un array
-function limpiarArrayEntrada(&$entrada){
+function limpiarArrayEntrada(array &$entrada):array{
     $tsalida=[];
     foreach ($entrada as $key => $value ) {
         $tsalida[$key] = limpiarEntrada($value);
     }
     return $tsalida;
+}
+function añadirpre():string {
+    
+    $añadir ="";
+    if ($_POST['edad'] == 4 ){
+    $añadir = ($_POST['sexo'] == "hombre" )?" Don":" Doña";
+    }
+    return $añadir;
 }
 ?>
 <hr>

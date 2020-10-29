@@ -23,7 +23,9 @@
 		<div id="content">
 <?php 
 
-$tusuarios = [ 'pepe' => '1234', "luis" => "siul", "admin"=> "admin"];
+$tusuarios = [ 'pepe' => '1234', 
+               "luis" => "siul", 
+               "admin"=> "admin"];
 
 if (empty($_REQUEST['nombre']) ||  !isset($_REQUEST['clave'])){
     echo " Error: falta valores introducir los valores de usuario y contraseña.<br> ";

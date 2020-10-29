@@ -9,6 +9,8 @@ $paises = array(
     'Chile' => array("Capital" => "Santiago", "Poblacion"   => "36000000"),
     'Suecia' => array("Capital" => "Estocolmo", "Poblacion" => "25000000"),
 );
+
+
 // Forma moderna, mas compacta
 $ciudades = [
     'Francia' =>    ["París","Burdeos","Niza","Lille","Nantes"],

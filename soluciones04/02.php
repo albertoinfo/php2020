@@ -28,7 +28,7 @@ function operar($val1,$val2,$operacion):float {
     }
     return $resultado;
 }
-$operacion = $_REQUEST['operacion'];
+
 function imprimirConFormato($formato,$valor)
 {
     switch ($formato) {
@@ -82,8 +82,8 @@ if (isset($_GET["operacion"])) {
 <script>
 // No se puede borrar con el reset si tiene value fijados 
 function borrarvalores(){
-    document.getElementsByName('num1').innerHTML = "";
-    document.getElementsByName('num2').innerHTML = "";
+    document.getElementsByName('num1').value = "";
+    document.getElementsByName('num2').value = "";
 }
 </script>
 <body>

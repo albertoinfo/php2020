@@ -11,7 +11,7 @@
     }
     // Equivale la funcion min($array)
     function valorMinimo ($tabla) {
-        $valor = $tabla[0];
+        $valohttp://www.e-recursos.net/cursos4/my/r = $tabla[0];
         for ($i = 0; $i < count($tabla); $i++) {
             if ($tabla[$i] < $valor) {
                 $valor = $tabla[$i];
@@ -38,6 +38,7 @@
         return $valor;
     }
   ?>  
+
 
 <html>
 <head>
