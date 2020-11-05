@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo de formulario</title>
+</head>
+<body>
+	<form method="get" action="procesar.php">
+		<fieldset>
+			<legend style="text-align: center">
+				<b>FORMULARIO DE PRUEBA</b>
+			</legend>
+			<fieldset>
+				<legend>Datos de identificación</legend>
+				Nombre: <input name="nombre" type="text" required><br>
+				Contraseña: <input name="clave" type="password" placeholder="Contraseña segura" size=20>
+			</fieldset>
+
+
+			Modo de juego :<select name="modo">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select> <br> Indique su nivel de juego :<br>
+            1 <input type="range" name="nivel" min="1" max="10" step="2"> 10<br>
+
+			<fieldset>
+				<legend>Datos de su avatar</legend>
+				Elige tu color: <input type="color" name="tucolor"> <br>
+				<p>
+					Elije tus Armas: <select name="armas[]" size="3" multiple
+						style="vertical-align: top;">
+						<option value="ES">Espada</option>
+						<option value="AR" selected="selected">Arco</option>
+						<option value="MA">Maza</option>
+						<option value="BA">Ballesta</option>
+						<option>Lanza</option>
+					</select>
+				</p>
+
+				Activar velocidad:
+				<input name="velocidad" value="1" checked="checked" type=radio>Normal &nbsp;
+				<input name="velocidad" value="2" type=radio>Plus <br>
+				 <br>
+				Poderes:<br>
+				 <input name="poderes[]" value="magia" type="checkbox" checked="checked"> Magia<br> 
+				 <input name="poderes[]" value="fuerza" type="checkbox"> Fuerza<br>
+				 <input name="poderes[]" value="invisibilidad" type="checkbox"> Invisibilidad<br>
+				 <input name="poderes[]" value="super" type="checkbox" disabled> Total Pro<br> <br>
+			</fieldset>
+			<input type="submit" value="Enviar 1">
+			<button name="B1" value="B100">Enviar B1</button>
+			<input type="reset" value="Limpiar">
+		</fieldset>
+	</form>
+
+</body>
+</html>
