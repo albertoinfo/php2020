@@ -18,7 +18,9 @@ if ( isset($_GET['orden'])){
             }
             if (isset ($_GET['deportes'])){
                $deportes= $_GET['deportes'];
-                setcookie('deportes',implode(",",$deportes),TIEMPOVALIDEZ);
+               var_dump($deportes);
+               
+               setcookie('deportes',implode(",",$deportes),TIEMPOVALIDEZ);
             }
                break;
         case "Eliminar":
@@ -71,7 +73,7 @@ Género :<br>
 	<br>
 <label>Deportes</label><br>
 	<select name="deportes[]" multiple="multiple" size="3">
-     <option value="Futbol"   <?= in_array("Futbot"   ,$deportes)?"selected=\"selected\"":""; ?>   >Futbol</option>
+     <option value="Futbol"   <?= in_array("Futbol"   ,$deportes)?"selected=\"selected\"":""; ?>   >Futbol</option>
      <option value="Tenis"    <?= in_array("Tenis"    ,$deportes)?"selected=\"selected\"":""; ?>   >Tenis</option>
      <option value="Ciclismo" <?= in_array("Ciclismo" ,$deportes)?"selected=\"selected\"":""; ?>   >Ciclismo</option>
      <option value="Otro"     <?= in_array("Otro"     ,$deportes)?"selected=\"selected\"":""; ?>   >Otro</option>

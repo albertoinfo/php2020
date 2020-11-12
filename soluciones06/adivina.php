@@ -26,7 +26,7 @@ if (!isset ($_SESSION['numeroOculto'])){
               header("Refresh:3");
               exit();
           } else 
-              if ( $_SESSION['intentos'] > MAXINTENTOS ){
+              if ( $_SESSION['intentos'] >= MAXINTENTOS ){
                echo " Superado el número de intentos <br> ";
                session_destroy();
                echo " Se ha generando un nuevo número a adivinar ";
