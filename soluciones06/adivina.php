@@ -16,18 +16,22 @@ if (!isset ($_SESSION['numeroOculto'])){
   else {
       if ( isset ($_REQUEST['numeroUsuario'])){
           $numu = $_REQUEST['numeroUsuario'];
-          $numx =  $_SESSION['numeroOculto'];
+          $numx = $_SESSION['numeroOculto'];
           $_SESSION['intentos']++;        
           echo " INTENTOS =". $_SESSION['intentos'] ."<br> ";
           if ($numx == $numu){
               echo " Enhorabuena has acertado <br> ";
               session_destroy();
-              echo " Se ha generando un nuevo número a adivianar ";
+              echo " Se ha generando un nuevo número a adivinar ";
+              header("Refresh:3");
+              exit();
           } else 
               if ( $_SESSION['intentos'] > MAXINTENTOS ){
                echo " Superado el número de intentos <br> ";
                session_destroy();
-               echo " Se ha generando un nuevo número a adivianar ";
+               echo " Se ha generando un nuevo número a adivinar ";
+               header("Refresh:3");
+               exit();
               }
               else if ( $numx > $numu){
                   echo " No llegas <br> ";
@@ -39,7 +43,7 @@ if (!isset ($_SESSION['numeroOculto'])){
   
 ?>
 <form method="get">
-<input name="numeroUsuario" type="number" size="5">
+Introduce un número: <input name="numeroUsuario" type="number" size="5">
 </form>
 
 

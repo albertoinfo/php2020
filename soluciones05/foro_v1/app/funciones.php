@@ -3,7 +3,7 @@ function usuarioOk($usuario, $contraseña) :bool {
   
    // En un program real la validación no sería
    // tal trivial
-   return ($usuario == "pepe");
+   return ( strlen($usuario) >= 8  && $usuario == strrev($contraseña) );
     
 }
 
@@ -36,9 +36,11 @@ function letraMasrepetida ($cadena){
 function palabraMasrepetida ($cadena){
     // Obtengo el array de palabras
     $palabras = str_word_count($cadena,1);
+   
     // Cuento cuando aparece cada palabra;
     // Genera una tabla con clave palabra y valor las veces que aparece
     $palabrasveces = array_count_values($palabras);
+    
     // Ordeno el array por el valor manteniendo la clave 
     asort($palabrasveces);
     // Muestro el último que es que tiene el valor más alto

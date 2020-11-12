@@ -110,7 +110,8 @@ for ($ncasillas = 1; $ncasillas <= $totalcasillas; $ncasillas ++) {
         $ndias ++;
         // Festivo
         if ($ncasillas % 7 == 6 || $ncasillas % 7 == 0) {
-            echo "<td style=color:red> $ndias </td>";
+            echo "<td style=colo
+    if ( $total <= 35) return 35;r:red> $ndias </td>";
         } else {
             echo "<td> $ndias </td>";
         }

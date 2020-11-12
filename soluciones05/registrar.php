@@ -22,8 +22,8 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){ ?>
 	
 	<input type="text" name="nombre" placeholder="Nombre" size="10">
 	<input type="text" name="email" placeholder="Correo electrónico" size="15"><br>	
-	<input type="password" name="contraseña1" placeholder="Contraseña"   size="10"><br>	
-	<input type="password" name="contraseña2" placeholder="Contraseña"   size="10"><br>	
+	<input type="text" name="contraseña1" placeholder="Contraseña"   size="10"><br>	
+	<input type="text" name="contraseña2" placeholder="Contraseña"   size="10"><br>	
 	<input type="submit" value="Enviar" />
 	</fieldset>
 </form>
@@ -71,7 +71,7 @@ if ( !hayDigito($clave)){
     exit;
 }
 
-if ( !hayAlfanumerico($clave)){
+if ( !hayNoAlfanumerico($clave)){
     echo " No hay nigún caracter no alfanumérico ";
     exit;       
 }
@@ -114,7 +114,7 @@ function hayDigito ($valor){
     return false;
 }
 
-function hayAlfanumerico ($valor){
+function hayNoAlfanumerico ($valor){
     for ($i=0; $i<strlen($valor); $i++){
         if ( !ctype_alnum($valor[$i]) )
             return true;
