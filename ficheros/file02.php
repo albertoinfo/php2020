@@ -19,15 +19,15 @@ define("FICH_DATOS", 'usuarios.txt');
       $fich = @fopen(FICH_DATOS,"w") or die ("Error al crear el fichero.");
       fclose($fich);
  }
- $fich = @fopen(FICH_DATOS, 'r') or die("ERROR al abrir fichero de usuarios"); // abrimos el fichero para lectura
+ $filearray = file (FICH_DATOS);
  echo "<table border='1'>\n";
  echo "<tr><th>Usuario</th><th>Contraseña</th</tr>\n";
- while ($linea = fgets($fich)) {
+ foreach ($filearray as $linea) {
         $partes = explode('|', trim($linea));
         // "Limpiamos" la línea y la troceamos obtiendo sus componentes
         echo "<tr><td>$partes[0]</td><td>$partes[1]</td>"; // Escribimos la correspondiente fila de la tabla
  }
- fclose($fich);
+ 
  echo "</table><br>\n";
 
 ?>
@@ -43,12 +43,10 @@ Contraseña   : <input type='password' name='clave' size='10' ><br>
 if ( $_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     // abrimos el fichero para añadir al final
-    $fich = @fopen(FICH_DATOS, 'a') or die("ERROR al abrir fichero"); 
+  
     $cadena = $_POST['user'] . '|' . $_POST['clave'] . "\n";
-    // Creamos cadena a grabar -con su separador-
-    $ok = fwrite($fich, $cadena); // escribimos datos en el fichero
+    $ok = file_put_contents(FICH_DATOS, $cadena, FILE_APPEND);
     echo ($ok) ? "Datos añadidos al fichero" : "Error al añadir datos";
-    fclose($fich);
     header("Refresh:0");
 }
 ?>
