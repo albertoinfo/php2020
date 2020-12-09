@@ -12,5 +12,6 @@ echo "<br> ".$objm->atributo23;
 
 echo $objm;
 $objm->incrementa();
-$objm->decrementa(); // No existe el método
+$objm->decrementa(334,"Hola"); // No existe el método
+$objm->hacerAlgo();
 echo $objm;

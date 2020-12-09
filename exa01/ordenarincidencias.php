@@ -21,6 +21,7 @@ while ($partes = fgetcsv($fich)) {
     $tablaIndencias[]= $campos;
 }
 fclose($fich);
+var_dump($tablaIndencias);
 
 usort($tablaIndencias,'ordenarporprioridad');
 

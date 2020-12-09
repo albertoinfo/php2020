@@ -8,6 +8,7 @@
 
 <?php
 
+
 define ('FICHERO','contador.txt');
 
 // MANEJO EL CONTADOR ALMACENADO EN UN COOKIE
@@ -16,13 +17,13 @@ if (isset($_COOKIE['contador'])){
     $numerocookie = $_COOKIE['contador'];
 } 
 $numerocookie++;
-setcookie("contador",$numerocookie,time()+3600*24*30);
+setcookie("contador",$numerocookie,time()+3600*24*30*3);
 
 //MANEJO EL CONTADOR ALMACENADO EN EL FICHERO
 $numero = 0;
 if (file_exists(FICHERO)) {
     $numero = @file_get_contents(FICHERO); 
-    if ( $numero == false ){
+    if ( $numero === false ){
         die("Error al abrir el fichero");
     }
     settype($numero, "integer"); // Para que funcione el numero++

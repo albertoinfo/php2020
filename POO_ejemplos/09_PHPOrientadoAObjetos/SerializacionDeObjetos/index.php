@@ -19,9 +19,10 @@
   <?php
     
     
-    $numeroDeGalletas = $_POST['numeroDeGalletas'];
-    if (isset($numeroDeGalletas)) {
-      $coco->come($numeroDeGalletas);
+    
+    if (isset($_POST['numeroDeGalletas'])) {
+      $coco->come($_POST['numeroDeGalletas']);
+      $_SESSION['coco'] = serialize($coco);
     }
     ?>
     
@@ -32,9 +33,6 @@
       <input type="submit" value="Comer">
     </form>
     
-    <?php
-      $_SESSION['coco'] = serialize($coco);
-    ?>
     
   </body>
 </html>

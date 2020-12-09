@@ -29,7 +29,7 @@ if (isset($_GET['fichero'])) {
 } else {
     ?>
 <form>
-		Fichero a mostrar: <input type="text" name="fichero">
+Fichero a mostrar: <input type="text" name="fichero">
 </form>
 
 <?php

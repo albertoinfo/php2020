@@ -11,7 +11,7 @@ function ordenporTamaño($a, $b)
 /*
  * Devuelve un array [nombre , tipo, tamaño ]
  */
-function infoDir($dir)
+function infoDir($dir):array
 {
     $resu = [];
     if ($dh = opendir($dir)) {
@@ -41,6 +41,8 @@ function infoDir($dir)
 <body>
 	<H1>MOSTRAR DIRECTORIO</H1>
 <?php
+
+
 if (isset($_GET['directorio'])) {
     if (is_dir($_GET['directorio'])) {
         $tablafichero = infoDir($_GET['directorio']);
