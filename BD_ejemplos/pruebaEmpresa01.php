@@ -3,7 +3,7 @@
  *  Ejemplo básico de consulta a la base de datos Empresa
  */
 echo " Conectando a la base de datos <br>";
-$conex = new mysqli("localhost", "root", "root", "Empresa"); // Abre una conexión
+$conex = new mysqli("192.168.105.96", "root", "root", "Empresa"); // Abre una conexión
 if (mysqli_connect_errno()) {
     // Comprueba conexión
     printf("Conexión fallida: %s\n", mysqli_connect_error());

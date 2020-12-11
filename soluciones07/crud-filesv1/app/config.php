@@ -1,7 +1,7 @@
 <?php 
 // FICHERO DE CONFURACIÓN DE LA APLICACIÓN
 // Campos que se muestran en el formulario
-define('CAMPOSVISIBLES',3);
+define('CAMPOSVISIBLES',2);
 // Fichero donde se guardan los datos
 define('FILEUSER','dat/usuarios.txt');
 // TIPO puede ser:
