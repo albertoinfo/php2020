@@ -4,6 +4,10 @@
     
     private $galletas; // galletas comidas
     
+    public function __wakeup() {
+        echo " Tengo hambre...";
+    }
+    
     public function __construct() {
        
              $this->galletas = 0;

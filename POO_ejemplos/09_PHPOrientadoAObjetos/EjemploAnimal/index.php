@@ -10,6 +10,7 @@
      // include_once 'Ave.php'; // no es necesario incluirla
       include_once 'Pinguino.php';
       include_once 'Gato.php';
+      
 
       $garfield = new Gato("macho", "romano");
       $tom = new Gato("macho");
