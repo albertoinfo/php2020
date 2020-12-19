@@ -41,8 +41,7 @@ function mostrarDatos (){
 
 function limpiarEntrada(string $entrada):string{
     $salida = trim($entrada); // Elimina espacios antes y después de los datos
-    $salida = stripslashes($salida); // Elimina backslashes \
-    $salida = htmlspecialchars($salida); // Traduce caracteres especiales en entidades HTML
+    $salida = strip_tags($salida); // Elimina marcas
     return $salida;
 }
 // Función para limpiar todos elementos de un array

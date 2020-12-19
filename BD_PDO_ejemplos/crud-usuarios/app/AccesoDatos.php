@@ -89,10 +89,10 @@ class AccesoDatos {
     // UPDATE
     public function modUsuario($user):bool{
       
-        $this->stmt_moduser->bindParam(':login',$user->login);
-        $this->stmt_moduser->bindParam(':nombre',$user->nombre);
-        $this->stmt_moduser->bindParam(':password',$user->password);
-        $this->stmt_moduser->bindParam(':comentario',$user->comentario);
+        $this->stmt_moduser->bindValue(':login',$user->login);
+        $this->stmt_moduser->bindValue(':nombre',$this->dbh->quote($user->nombre));
+        $this->stmt_moduser->bindValue(':password',$user->password);
+        $this->stmt_moduser->bindValue(':comentario',$user->comentario);
         $this->stmt_moduser->execute();
         $resu = ($this->stmt_moduser->rowCount () == 1);
         return $resu;
@@ -100,7 +100,7 @@ class AccesoDatos {
 
     //INSERT
     public function addUsuario($user):bool{
-          // Le vinculo los parámetros directamente el execute
+        
         $this->stmt_creauser->execute( [$user->login, $user->nombre, $user->password, $user->comentario]);
         $resu = ($this->stmt_creauser->rowCount () == 1);
         return $resu;
