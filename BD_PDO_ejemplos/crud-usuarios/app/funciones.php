@@ -24,7 +24,7 @@ function mostrarDatos (){
         $msg .= "<td>$user->login</td>";
         $msg .= "<td>$user->password</td>";
         $msg .= "<td>$user->comentario</td>";
-        $msg .="<td><a href=\"#\" onclick=\"confirmarBorrar('$user->nombre',$user->login);\" >Borrar</a></td>\n";
+        $msg .="<td><a href=\"#\" onclick=\"confirmarBorrar('$user->nombre','$user->login');\" >Borrar</a></td>\n";
         $msg .="<td><a href=\"".$auto."?orden=Modificar&id=$user->login\">Modificar</a></td>\n";
         $msg .="<td><a href=\"".$auto."?orden=Detalles&id=$user->login\" >Detalles</a></td>\n";
         $msg .="</tr>\n";

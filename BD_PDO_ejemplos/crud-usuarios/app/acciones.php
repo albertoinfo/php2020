@@ -1,39 +1,37 @@
 <?php
-function accionBorrar ($id){    
-    
+include_once "Usuario.php";
+
+function accionBorrar ($login){    
+    $db = AccesoDatos::getModelo();
+    $tuser = $db->borrarUsuario($login);
 }
 
 function accionTerminar(){
-    volcarDatos($_SESSION['tuser']);
+    AccesoDatos::closeModelo();
     session_destroy();
 }
  
 function accionAlta(){
-    $nombre  = "";
-    $login   = "";
-    $clave   = "";
-    $comentario = "";
+    $user = new Usuario();
+    $user->nombre  = "";
+    $user->login   = "";
+    $user->password   = "";
+    $user->comentario = "";
     $orden= "Nuevo";
     include_once "layout/formulario.php";
 }
 
-function accionDetalles($id){
-    $usuario = $_SESSION['tuser'][$id];
-    $nombre  = $usuario[0];
-    $login   = $usuario[1];
-    $clave   = $usuario[2];
-    $comentario=$usuario[3];
+function accionDetalles($login){
+    $db = AccesoDatos::getModelo();
+    $user = $db->getUsuario($login);
     $orden = "Detalles";
     include_once "layout/formulario.php";
 }
 
 
-function accionModificar($id){
-    $usuario = $_SESSION['tuser'][$id];
-    $nombre  = $usuario[0];
-    $login   = $usuario[1];
-    $clave   = $usuario[2];
-    $comentario=$usuario[3];
+function accionModificar($login){
+    $db = AccesoDatos::getModelo();
+    $user = $db->getUsuario($login);
     $orden="Modificar";
     include_once "layout/formulario.php";
 }
@@ -41,23 +39,25 @@ function accionModificar($id){
 function accionPostAlta(){
  
     limpiarArrayEntrada($_POST); //Evito la posible inyección de código
-    $nuevo = [ $_POST['nombre'],$_POST['login'],$_POST['clave'],$_POST['comentario']];
-    $_SESSION['tuser'][]= $nuevo;  
+    $user = new Usuario();
+    $user->nombre  = $_POST['nombre'];
+    $user->login   = $_POST['login'];
+    $user->password   = $_POST['clave'];
+    $user->comentario = $_POST['comentario'];
+    $db = AccesoDatos::getModelo();
+    $db->addUsuario($user);
+    
 }
 
 function accionPostModificar(){
     limpiarArrayEntrada($_POST); //Evito la posible inyección de código
-    $i=0;
-    foreach ($_SESSION['tuser'] as $usuario){
-        if ($usuario[1] == $_POST['login']){
-            $usuario[0]= $_POST['nombre'];
-            $usuario[2]= $_POST['clave'];
-            $usuario[3]= $_POST['comentario'];
-            $_SESSION['tuser'][$i] = $usuario;
-            break;
-        }
-        $i++;
-    }
+    $user = new Usuario();
+    $user->nombre  = $_POST['nombre'];
+    $user->login   = $_POST['login'];
+    $user->password  = $_POST['clave'];
+    $user->comentario = $_POST['comentario'];
+    $db = AccesoDatos::getModelo();
+    $db->modUsuario($user);
     
 }
 

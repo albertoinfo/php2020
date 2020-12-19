@@ -14,7 +14,7 @@ class Usuario
             return $this->$atributo;
         }
     }
-    // Setter con método mágioc
+    // Setter con método mágico
     public function __set($atributo,$valor){
         if(property_exists($this, $atributo)) {
             $this->$atributo = $valor;
