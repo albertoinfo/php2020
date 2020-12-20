@@ -37,10 +37,7 @@ function accionModificar($login){
 }
 
 function accionPostAlta(){
-    print_r($_POST);
-
     limpiarArrayEntrada($_POST); //Evito la posible inyección de código
-    print_r($_POST);
     $user = new Usuario();
     $user->nombre  = $_POST['nombre'];
     $user->login   = $_POST['login'];

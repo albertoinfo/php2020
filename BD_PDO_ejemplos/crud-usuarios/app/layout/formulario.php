@@ -25,6 +25,7 @@
  <input type="text" 	name="comentario" value="<?=$user->comentario ?>" <?= ($orden == "Detalles")?"readonly":"" ?> size=20></td></tr>
  </table>
  <input type="submit"	 name="orden" 	value="<?=$orden?>">
+ <input type="submit"	 name="orden" 	value="Volver">
 </form> 
 </div>
 </div>

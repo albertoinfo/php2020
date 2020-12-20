@@ -90,7 +90,7 @@ class AccesoDatos {
     public function modUsuario($user):bool{
       
         $this->stmt_moduser->bindValue(':login',$user->login);
-        $this->stmt_moduser->bindValue(':nombre',$this->dbh->quote($user->nombre));
+        $this->stmt_moduser->bindValue(':nombre',$user->nombre);
         $this->stmt_moduser->bindValue(':password',$user->password);
         $this->stmt_moduser->bindValue(':comentario',$user->comentario);
         $this->stmt_moduser->execute();
