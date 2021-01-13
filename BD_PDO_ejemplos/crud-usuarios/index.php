@@ -5,11 +5,6 @@ include_once 'app/funciones.php';
 include_once 'app/acciones.php';
 
 
-// Tabla de usuarios
-if (!isset ($_SESSION['tuser'])){
-    $_SESSION['tuser'] = "";  
-}
-
 // Div con contenido
 $contenido="";
 if ($_SERVER['REQUEST_METHOD'] == "GET" ){

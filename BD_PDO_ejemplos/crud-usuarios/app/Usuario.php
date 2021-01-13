@@ -1,5 +1,5 @@
 <?php
-[ "Nombre","login","Password","Comentario"];
+
 
 class Usuario
 {

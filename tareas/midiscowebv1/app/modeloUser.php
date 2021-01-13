@@ -37,7 +37,7 @@ function modeloOkUser($user,$clave){
         return ($_SESSION['tusuarios'][$user][0] == $clave);
     }
     return false;
-}
+} modeloUserGet($_GET['userid']);
 
 
 function modeloExisteID(String $user):bool{
@@ -89,7 +89,12 @@ function modeloEsClaveSegura (String $clave):bool {
 
 
 /*
- * Comprueba si un correo existe
+ * Comprueba
+        }
+    }
+    include_once 'plantilla/fregistro.php';
+}
+ si un correo existe
  */
 function modeloExisteEmail( String $email):bool{
     foreach ($_SESSION['tusuarios'] as $clave => $datosusuario){

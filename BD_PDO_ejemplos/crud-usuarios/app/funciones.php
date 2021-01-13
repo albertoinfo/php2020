@@ -4,7 +4,7 @@ include_once 'app/AccesoDatos.php';
 
 
 
-// MOSTRA LOS DATOS DE LA TABLA DE ALMACENADA EN AL SESSION 
+// MUESTRA TODOS LOS USUARIOS
 function mostrarDatos (){
     
     $titulos = [ "Nombre","login","Password","Comentario"];
