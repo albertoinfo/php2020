@@ -29,7 +29,7 @@ if ($cli == null) {
     exit();
 }
 // Incremento el número de veces que ha accedido
-$ac->incrementarVeces($cli->nombre);
+$ac->incrementarVeces($cli->cod_cliente);
 // Obtengo los datos del modelo
 $lista = $ac->obtenerListaPedidos($cli->cod_cliente);
 $ac->close();

@@ -48,7 +48,7 @@ class AccesoDatos {
 	    // Construyo las consultas
 	    $this->stmt1 = $this->dbh->prepare("select * from clientes where nombre = ? and clave = ?");
 	    $this->stmt2 = $this->dbh->prepare("select * from pedidos where cod_cliente = ?");
-	    $this->stmt3 = $this->dbh->prepare("update clientes SET veces=veces+1 where nombre = ?");
+	    $this->stmt3 = $this->dbh->prepare("update clientes SET veces=veces+1 where cod_cliente= ?");
 
 	    
 	}
@@ -99,8 +99,8 @@ class AccesoDatos {
 	 *  Incremente el número de acceso de usuario
 	 *  @param String $nobmre del cliente
 	 */
-	public function incrementarVeces(String $nombre) {
-	    $this->stmt3->bindValue(1, $nombre);
+	public function incrementarVeces(int $codigo) {
+	    $this->stmt3->bindValue(1, $codigo);
 	    $this->stmt3->execute();
 	}
 

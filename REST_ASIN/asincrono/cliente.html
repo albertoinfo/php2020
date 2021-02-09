@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pruebas AJAX</title>
+<script type="text/javascript" src="funciones.js"></script>
+
+</script>
+</head>
+<body>
+<!-- Javascript llama directamente al php con AJAX-->
+<button name="suma"   onclick="enviarmas()"   >Incrementa </button><br>
+<button name="resta"  onclick="enviarmenos()" >Decrementa </button><br>
+<button name="ver"    onclick="ver()" >Ver Ayax </button><br>
+<!--  El navegador carga un nueva página pasandole parámetros -->
+<form action="pruebafetch.php?oper=ver" method='POST'>
+<button >Mostrar </button>
+</form>
+
+</body>
+</html>
