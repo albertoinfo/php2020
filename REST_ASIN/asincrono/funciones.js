@@ -1,9 +1,9 @@
 function enviarmas(){
-    fetch("pruebafetch.php?oper=suma")
+    fetch("servidor.php?oper=suma")
   }
 
 function enviarmenos(){
-    fetch("pruebafetch.php?oper=resta")
+    fetch("servidor.php?oper=resta")
     .catch(function(err) {
           console.error(err);
       });
@@ -12,7 +12,7 @@ function enviarmenos(){
   
   async function ver(){
     
-    var response = await fetch('pruebafetch.php?oper=verajax');
+    var response = await fetch('servidor.php?oper=verajax');
     if (response.ok) {
         
         var respuesta = await response.json();
