@@ -47,7 +47,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST')
     $cadena = $_POST['user'] . '|' . $_POST['clave'] . "\n";
     $ok = file_put_contents(FICH_DATOS, $cadena, FILE_APPEND);
     echo ($ok) ? "Datos añadidos al fichero" : "Error al añadir datos";
-    header("Refresh:0");
+    header("Refresh:2");
 }
 ?>
 </body>

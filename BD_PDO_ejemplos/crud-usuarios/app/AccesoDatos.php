@@ -48,12 +48,13 @@ class AccesoDatos {
     // Cierro la conexión anulando todos los objectos relacioanado con la conexión PDO (stmt)
     public static function closeModelo(){
         if (self::$modelo != null){
-            $this->stmt_usuarios = null;
-            $this->stmt_usuario  = null;
-            $this->stmt_boruser  = null;
-            $this->stmt_moduser  = null;
-            $this->stmt_creauser = null;
-            $this->dbh = null;
+            $obj = self::$modelo;
+            $obj->stmt_usuarios = null;
+            $obj->stmt_usuario  = null;
+            $obj->stmt_boruser  = null;
+            $obj->stmt_moduser  = null;
+            $obj->stmt_creauser = null;
+            $obj->dbh = null;
             self::$modelo = null; // Borro el objeto.
         }
     }
